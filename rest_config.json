@@ -1,0 +1,41 @@
+{
+    "port": 4000,
+    "endpoints": [
+        {
+            "name": "robotposition",
+            "path": "/robotposition",
+            "method": "GET",
+            "sql": "SELECT * FROM (SELECT * FROM robotposition ORDER BY ID DESC LIMIT {elapsed}) x ORDER BY timestamp",
+            "parameterss": [
+                "elapsed"
+            ]
+        },
+        {
+            "name": "motortorque",
+            "path": "/motortorque",
+            "method": "GET",
+            "sql": "SELECT * FROM (SELECT * FROM motortorque ORDER BY ID DESC LIMIT {elapsed}) x ORDER BY timestamp",
+            "parameterss": [
+                "elapsed"
+            ]
+        },
+        {
+            "name": "robotstatus",
+            "path": "/robotstatus",
+            "method": "GET",
+            "sql": "SELECT * FROM (SELECT * FROM robotstatus ORDER BY ID DESC LIMIT {elapsed}) x ORDER BY timestamp",
+            "parameterss": [
+                "elapsed"
+            ]
+        },
+        {
+            "name": "machinestus",
+            "path": "/machinestus",
+            "method": "GET",
+            "sql": "SELECT * FROM (SELECT * FROM machinestus ORDER BY ID DESC LIMIT {elapsed}) x ORDER BY timestamp",
+            "parameterss": [
+                "elapsed"
+            ]
+        }
+    ]
+}
